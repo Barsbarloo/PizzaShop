@@ -5,6 +5,9 @@ require 'sinatra/reloader'
 require 'sinatra/activerecord'
 
 set :database, {adapter: "sqlite3", database: "pizzashop"}
+class Product < ActiveRecord::Base
+
+end
 
 get '/' do
 	erb :index			
