@@ -57,3 +57,9 @@ function cart_get_orders()
     }
     return orders;
 }
+
+function cancel_order()
+{
+    alert('Your Order has been canceled');
+    return false;
+}
