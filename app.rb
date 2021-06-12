@@ -28,10 +28,15 @@ post '/cart' do
 	@orders_input = params[:orders]
   
 	@items = parse_orders_input @orders_input
-  
+  # showing message that Cart is empty
+	if @items.length == 0
+		return erb :cart_is_empty
+	end
+  # showing list of products in cart
 	@items.each do |item|
 	   item[0] = Product.find(item[0]) #unkonwn error
 	end
+  # returning default
 	erb :cart
   end
 
